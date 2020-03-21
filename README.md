@@ -5,7 +5,7 @@ Thanks to https://github.com/tenntenn/gohandson.
 ## development
 
 ```sh
-# Clone source to GOPATH with go get
+# clone source to GOPATH with go get
 $ go get github.com/daido1976/go-handson
 
 # build & execute example

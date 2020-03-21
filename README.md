@@ -19,7 +19,7 @@ Hello, 世界
 # run example(multiple files)
 $ go run ./accountbook/skeleton/step06/main.go ./accountbook/skeleton/step06/accountbook.go
 [1]入力 [2]最新10件 [3]終了
->
+...
 ```
 
 If you use ghq, add secondary root for Go.

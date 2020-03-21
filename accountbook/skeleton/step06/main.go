@@ -11,7 +11,7 @@ import (
 func main() {
 
 	// AccountBookをNewAccountBookを使って作成
-	ab := NewAccountBook("accountbook.txt")
+	ab := NewAccountBook("./accountbook/skeleton/step06/accountbook.txt")
 
 LOOP: // 以下のループにラベル「LOOP」をつける
 	for {
@@ -31,7 +31,7 @@ LOOP: // 以下のループにラベル「LOOP」をつける
 
 			for i := 0; i < n; i++ {
 				if err := ab.AddItem(inputItem()); err != nil {
-					// TODO: os.Stderrにエラーメッセージを出す
+					// os.Stderrにエラーメッセージを出す
 					log.Fatal(err)
 					break LOOP
 				}
@@ -40,12 +40,12 @@ LOOP: // 以下のループにラベル「LOOP」をつける
 			items, err := ab.GetItems(10)
 			if err != nil {
 				log.Fatal(err)
-				// TODO: LOOPという名前のついたforから抜け出す
+				// LOOPという名前のついたforから抜け出す
 				break LOOP
 			}
 			showItems(items)
 		case 3: // 終了
-			// TODO: 3のとき「終了します」と出力して終了する
+			// 3のとき「終了します」と出力して終了する
 			fmt.Println("終了します")
 			os.Exit(0)
 		}

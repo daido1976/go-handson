@@ -10,7 +10,7 @@ import (
 func main() {
 
 	// AccountBookをNewAccountBookを使って作成
-	ab := NewAccountBook("accountbook.txt")
+	ab := newAccountBook("accountbook.txt")
 
 LOOP: // 以下のループにラベル「LOOP」をつける
 	for {
@@ -29,13 +29,13 @@ LOOP: // 以下のループにラベル「LOOP」をつける
 			fmt.Scan(&n)
 
 			for i := 0; i < n; i++ {
-				if err := ab.AddItem(inputItem()); err != nil {
+				if err := ab.addItem(inputItem()); err != nil {
 					fmt.Fprintln(os.Stderr, "エラー:", err)
 					break LOOP
 				}
 			}
 		case 2: // 最新10件
-			items, err := ab.GetItems(10)
+			items, err := ab.getItems(10)
 			if err != nil {
 				fmt.Fprintln(os.Stderr, "エラー:", err)
 				break LOOP

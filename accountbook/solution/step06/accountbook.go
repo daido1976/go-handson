@@ -20,13 +20,13 @@ type AccountBook struct {
 }
 
 // 新しいAccountBookを作成する
-func NewAccountBook(fileName string) *AccountBook {
+func newAccountBook(fileName string) *AccountBook {
 	// AccountBookのポインタを返す
 	return &AccountBook{fileName: fileName}
 }
 
 // ファイルに新しいItemを追加する
-func (ab *AccountBook) AddItem(item *Item) error {
+func (ab *AccountBook) addItem(item *Item) error {
 
 	// 追記用でファイルを開く
 	file, err := os.OpenFile(ab.fileName, os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
@@ -49,7 +49,7 @@ func (ab *AccountBook) AddItem(item *Item) error {
 
 // 最近追加したものを最大limit件だけItemを取得する
 // エラーが発生したら第2戻り値で返す
-func (ab *AccountBook) GetItems(limit int) ([]*Item, error) {
+func (ab *AccountBook) getItems(limit int) ([]*Item, error) {
 
 	// 読み込み用でファイルを開く
 	file, err := os.Open(ab.fileName)
